@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       {/* What I do */}
       <section className="min-h-[50dvh] flex flex-col justify-center items-center text-center pt-16 pb-12 hero-fade">
-        <h1 className="text-4xl font-semibold tracking-tight text-[#0a0a0a] mb-6">
+        <h1 className="text-4xl font-semibold tracking-tighter text-[#0a0a0a] mb-6">
           What I do
         </h1>
         <p className="text-base text-[#737373] leading-relaxed max-w-lg">

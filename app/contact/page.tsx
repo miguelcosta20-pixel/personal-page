@@ -6,7 +6,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-[calc(100dvh-4rem)] flex flex-col items-center justify-center text-center px-6 hero-fade">
-      <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-[#0a0a0a] mb-6 leading-[1.0]">
+      <h1 className="text-5xl sm:text-7xl font-bold tracking-tighter text-[#0a0a0a] mb-6 leading-[1.0]">
         Let&apos;s Work<br />Together
       </h1>
 

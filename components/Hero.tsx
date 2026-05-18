@@ -13,7 +13,7 @@ export function Hero() {
             Available for SAP AI &amp; BTP roles
           </span>
 
-          <h1 className="text-5xl font-semibold tracking-tight text-[#0a0a0a] mb-3 leading-[1.1]">
+          <h1 className="text-5xl font-semibold tracking-tighter text-[#0a0a0a] mb-3 leading-[1.1]">
             Miguel Costa Paulo
           </h1>
           <p className="text-xl text-[#737373] mb-8">

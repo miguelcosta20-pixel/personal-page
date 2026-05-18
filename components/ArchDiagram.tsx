@@ -111,7 +111,12 @@ export function ArchDiagram({ nodes, edges }: ArchDiagramProps) {
   }
 
   return (
-    <div className="w-full rounded-2xl overflow-hidden ring-1 ring-black/[0.06]" style={{ height: 260 }}>
+    <div
+      className="w-full rounded-2xl overflow-hidden ring-1 ring-black/[0.06]"
+      style={{ height: 260 }}
+      role="img"
+      aria-label="Architecture diagram showing the solution components and their connections"
+    >
       <ReactFlow
         nodes={toRFNodes(nodes)}
         edges={toRFEdges(edges)}

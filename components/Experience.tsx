@@ -18,7 +18,7 @@ export function Experience() {
             observer.disconnect();
           }
         },
-        { rootMargin: "-40px" }
+        { threshold: 0.1 }
       );
       observer.observe(el);
       observers.push(observer);
@@ -50,7 +50,7 @@ export function Experience() {
               <ul className="space-y-1.5">
                 {exp.bullets.map((b, j) => (
                   <li key={j} className="text-sm text-[#404040] leading-relaxed flex gap-2">
-                    <span className="text-[#a3a3a3] shrink-0 mt-0.5">–</span>
+                    <span aria-hidden="true" className="text-[#737373] shrink-0 mt-0.5">–</span>
                     {b}
                   </li>
                 ))}

@@ -55,8 +55,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="pt-16 pb-10 hero-fade">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-sm text-[#737373] hover:text-[#0a0a0a] mb-8"
-          style={{ transition: "color 160ms ease-out" }}
+          className="back-link inline-flex items-center gap-1.5 text-sm text-[#737373] mb-8"
         >
           <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12">
             <path fillRule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
@@ -90,7 +89,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* The Challenge */}
       <FadeIn>
         <section className="border-t border-[#e5e5e5] py-12">
-          <h2 className="text-xs font-medium text-[#737373] uppercase tracking-wide mb-4">
+          <h2 className="text-sm font-semibold text-[#0a0a0a] mb-4">
             The Challenge
           </h2>
           <p className="text-base text-[#404040] leading-relaxed max-w-2xl">
@@ -102,7 +101,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* Technology */}
       <FadeIn delay={0.05}>
         <section className="border-t border-[#e5e5e5] py-12">
-          <h2 className="text-xs font-medium text-[#737373] uppercase tracking-wide mb-6">
+          <h2 className="text-sm font-semibold text-[#0a0a0a] mb-6">
             Technology
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -117,7 +116,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {flowDiagram && (
         <FadeIn delay={0.08}>
           <section className="border-t border-[#e5e5e5] py-12">
-            <h2 className="text-xs font-medium text-[#737373] uppercase tracking-wide mb-6">
+            <h2 className="text-sm font-semibold text-[#0a0a0a] mb-6">
               Architecture
             </h2>
             <ArchDiagram nodes={flowDiagram.nodes} edges={flowDiagram.edges} />
@@ -128,7 +127,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* My Role */}
       <FadeIn delay={0.1}>
         <section className="border-t border-[#e5e5e5] py-12">
-          <h2 className="text-xs font-medium text-[#737373] uppercase tracking-wide mb-4">
+          <h2 className="text-sm font-semibold text-[#0a0a0a] mb-4">
             My Role
           </h2>
           <ul className="space-y-3">
@@ -145,7 +144,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* Outcomes */}
       <FadeIn delay={0.15}>
         <section className="border-t border-[#e5e5e5] py-12">
-          <h2 className="text-xs font-medium text-[#737373] uppercase tracking-wide mb-4">
+          <h2 className="text-sm font-semibold text-[#0a0a0a] mb-4">
             Outcomes
           </h2>
           <ul className="space-y-3">

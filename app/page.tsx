@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FadeIn } from "@/components/FadeIn";
+import { projects } from "@/lib/data";
 
 export default function Home() {
+  const featuredProjects = projects.slice(0, 3);
+
   return (
     <main className="max-w-5xl mx-auto px-6">
       <section className="min-h-[88dvh] flex flex-col justify-center py-16 hero-fade">
@@ -24,22 +28,21 @@ export default function Home() {
 
             <p className="text-base text-[#737373] mb-10 max-w-lg leading-relaxed">
               8+ years designing and delivering production AI and cloud solutions for global enterprises.
-              Specialising in SAP AI Core, Generative AI Hub, and BTP cloud architecture —
+              Specialising in SAP AI Core, Generative AI Hub, and BTP cloud architecture,
               bridging solution advisory with hands-on delivery worldwide.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="cta-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white bg-[#0070F2] active:scale-[0.97]"
-                style={{ transition: "background-color 160ms ease-out, transform 160ms ease-out" }}
+                className="cta-primary inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-sm font-medium text-white bg-[#0070F2]"
               >
                 View projects
-                <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">→</span>
+                <span aria-hidden="true" className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs">→</span>
               </Link>
               <Link
                 href="/cv"
-                className="contact-link inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#e5e5e5] text-sm font-medium text-[#0a0a0a] bg-white active:scale-[0.97]"
+                className="contact-link inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full border border-[#e5e5e5] text-sm font-medium text-[#0a0a0a] bg-white active:scale-[0.97]"
                 style={{ transition: "border-color 160ms ease-out, background-color 160ms ease-out, transform 160ms ease-out" }}
               >
                 View CV
@@ -61,6 +64,46 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Selected Work */}
+      <section className="pb-24 border-t border-[#e5e5e5]">
+        <div className="flex items-baseline justify-between pt-12 mb-2">
+          <h2 className="text-sm font-semibold text-[#0a0a0a]">Selected Work</h2>
+          <Link
+            href="/projects"
+            className="text-sm text-[#0070F2] hover:underline"
+          >
+            View all →
+          </Link>
+        </div>
+
+        <div className="divide-y divide-[#e5e5e5]">
+          {featuredProjects.map((project, i) => (
+            <FadeIn key={project.slug} delay={i * 0.07}>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-8 py-5"
+              >
+                <span className="text-xs text-[#737373] shrink-0 sm:w-10">{project.year}</span>
+                <div className="flex-1 min-w-0">
+                  <p
+                    className="text-base font-medium text-[#0a0a0a] group-hover:text-[#0070F2] mb-1 leading-snug"
+                    style={{ transition: "color 160ms ease-out" }}
+                  >
+                    {project.title}
+                  </p>
+                  <p className="text-sm text-[#737373] leading-relaxed line-clamp-1">{project.summary}</p>
+                </div>
+                <span
+                  className="project-row-arrow hidden sm:block text-xs text-[#737373] group-hover:text-[#0070F2] shrink-0"
+                >
+                  {project.role} →
+                </span>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
       </section>
     </main>

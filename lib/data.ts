@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
     bullets: [
       "AI-first architect and Subject Matter Expert for SAP BTP AI, including SAP AI Core and Generative AI Hub; designed and delivered production RAG pipelines using LangChain and SAP AI Core vector capabilities.",
       "UX Architect and lead across large-scale S/4HANA transformation projects, owning end-to-end design from architecture through implementation (greenfield and brownfield), applying Clean Core principles throughout.",
-      "Lead for SAP BTP and S/4HANA UX throughout full RFx cycles including pre-sales, sales, and post-sales; delivered solution advisory engagements translating complex AI and cloud capabilities into measurable business value.",
+      "Lead for SAP BTP and S/4HANA UX throughout full RFx cycles, covering solution advisory, sales, and delivery; translated complex AI and cloud capabilities into measurable business value for enterprise customers.",
       "Solution Architect for cloud and on-premise custom developments; responsible for BTP Integration Architecture and scalable API/microservices design across SAP and non-SAP landscapes.",
       "Mentored junior architects and cloud developers within the team, supporting capability growth in SAP AI and BTP through structured knowledge sharing and code and design reviews.",
       "Worked in Agile and SAP Activate delivery frameworks across all engagements, leading sprint planning, architecture reviews, and stakeholder alignment sessions.",
@@ -95,7 +95,7 @@ export const skillGroups: SkillGroup[] = [
       "Stakeholder Engagement",
       "Sales Lifecycle",
       "AI Strategy & Roadmapping",
-      "Pre-sales & RFx",
+      "Solution Advisory & RFx",
       "BTP Solution Advisory",
       "Agile / SAP Activate",
     ],
@@ -171,11 +171,11 @@ export const projects: Project[] = [
     title: "AI-Driven Open Item Matching",
     role: "Solution Architect",
     stack: ["S/4HANA", "Event Mesh", "CAP", "SAP AI Core", "HANA Cloud"],
-    year: "2025",
+    year: "2026",
     summary:
       "Designed an event-driven accounts receivable automation platform for a global FMCG enterprise, capturing S/4HANA open items in real time via Event Mesh and applying AI-based matching to eliminate manual reconciliation.",
     challenge:
-      "A global FMCG enterprise was processing thousands of open items daily through S/4HANA's F.13 clearing run, with reconciliation handled manually by finance teams across multiple regions. The challenge was designing an event-driven architecture that could capture open items in real time as F.13 detected them, feed them into an AI matching engine without polling or batch delays, and present validated recommendations in a user-facing cockpit — all without disrupting the existing S/4HANA landscape or requiring changes to core financial processes.",
+      "A global FMCG enterprise was processing thousands of open items daily through S/4HANA's F.13 clearing run, with reconciliation handled manually by finance teams across multiple regions. The challenge was designing an event-driven architecture that could capture open items in real time as F.13 detected them, feed them into an AI matching engine without polling or batch delays, and present validated recommendations in a user-facing cockpit, without disrupting the existing S/4HANA landscape or requiring changes to core financial processes.",
     architecture: [
       [
         { label: "S/4HANA",     icon: null, abbr: "S/4",  color: "#7a3a1a", bg: "#fde8d6" },
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     ],
     outcomes: [
       "Architecture design approved and handed to development team for implementation",
-      "Event-driven pattern eliminates batch processing delays — open items available for AI matching in real time",
+      "Event-driven pattern eliminates batch processing delays: open items available for AI matching in real time",
       "AI matching layer designed to handle thousands of items per day without manual intervention",
       "Solution designed as a reusable pattern applicable to other S/4HANA finance clearing processes",
     ],
@@ -207,9 +207,9 @@ export const projects: Project[] = [
     stack: ["LangChain", "SAP AI Core", "HANA Cloud", "CAP", "SAP BTP"],
     year: "2025",
     summary:
-      "Designing and building a LangChain ReAct agent on SAP BTP that autonomously selects tools — HANA vector search and SAP OData APIs — to answer enterprise queries through multi-step reasoning.",
+      "Designing and building a LangChain ReAct agent on SAP BTP that autonomously selects tools (HANA vector search and SAP OData APIs) to answer enterprise queries through multi-step reasoning.",
     challenge:
-      "Enterprise AI systems built on fixed RAG pipelines can only answer questions in one way: retrieve context, generate response. Real business queries are more complex — they require deciding what information to look up, when to call a live system API, and how to combine multiple results before forming an answer. The goal of this PoC is to build a system on SAP BTP where the AI itself reasons about what action to take next, using available tools autonomously without hardcoding the logic for every query type. This demonstrates the agentic pattern the enterprise AI market is converging on.",
+      "Enterprise AI systems built on fixed RAG pipelines can only answer questions in one way: retrieve context, generate response. Real business queries are more complex: they require deciding what information to look up, when to call a live system API, and how to combine multiple results before forming an answer. The goal of this PoC is to build a system on SAP BTP where the AI itself reasons about what action to take next, using available tools autonomously without hardcoding the logic for every query type. This demonstrates the agentic pattern the enterprise AI market is converging on.",
     architecture: [
       [
         { label: "CAP Service",     icon: "/icons/cap.svg" },
@@ -223,11 +223,11 @@ export const projects: Project[] = [
       "Implementing HANA Cloud vector store as a retrieval tool available to the agent",
       "Exposing SAP OData endpoints as structured data tools the agent can call autonomously",
       "Building the CAP service layer as the API surface and audit trail for all agent interactions",
-      "Instrumenting reasoning traces for observability — capturing every tool call and decision step",
+      "Instrumenting reasoning traces for observability, capturing every tool call and decision step",
     ],
     outcomes: [
       "Validates LangChain + SAP AI Core as a reusable agentic pattern on BTP",
-      "Demonstrates multi-step reasoning with tool selection — beyond standard RAG pipelines",
+      "Demonstrates multi-step reasoning with tool selection, going beyond standard RAG pipelines",
       "Establishes a foundation for more complex multi-agent architectures on SAP BTP",
     ],
   },
@@ -240,7 +240,7 @@ export const projects: Project[] = [
     summary:
       "Designed and built an end-to-end banking process automation platform on SAP BTP, connecting bank customers via Cloud Integration, masking sensitive financial data, and automating receivables and cash application workflows at scale across multiple clients.",
     challenge:
-      "A financial services client needed to automate high-volume receivables and cash application processes across multiple bank customers, each with different systems, middleware, and compliance requirements. The platform had to securely connect to external bank systems via Cloud Connector and SAP Cloud Integration, copy and mask sensitive financial data before it reached the UI, and give operations teams a fully configurable automation layer — including AI-driven matching suggestions — that could be tailored per client without code changes. Delivering this across six or more onboarded clients while maintaining throughput in the thousands of transactions per day required a carefully layered architecture balancing security, flexibility, and performance.",
+      "A financial services client needed to automate high-volume receivables and cash application processes across multiple bank customers, each with different systems, middleware, and compliance requirements. The platform had to securely connect to external bank systems via Cloud Connector and SAP Cloud Integration, copy and mask sensitive financial data before it reached the UI, and give operations teams a fully configurable automation layer (including AI-driven matching suggestions) that could be tailored per client without code changes. Delivering this across six or more onboarded clients while maintaining throughput in the thousands of transactions per day required a carefully layered architecture balancing security, flexibility, and performance.",
     architecture: [
       [
         { label: "Cloud Connector", icon: null, abbr: "CC", color: "#1a4a6b", bg: "#d6eaf8" },
@@ -261,7 +261,7 @@ export const projects: Project[] = [
       "Over 300% increase in process profitability following platform go-live",
       "More than 6 bank clients onboarded by delivery completion",
       "Thousands of financial transactions processed automatically per day",
-      "Platform architected as a reusable, configurable product — no code changes required between client deployments",
+      "Platform architected as a reusable, configurable product: no code changes required between client deployments",
     ],
   },
   {

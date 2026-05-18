@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const navLinks = [
   {
@@ -103,13 +104,18 @@ export function Nav() {
                 <Link
                   key={href}
                   href={href}
-                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm ${
-                    active
-                      ? "bg-white text-[#0070F2] shadow-sm font-medium"
-                      : "text-[#737373] hover:text-[#0a0a0a]"
+                  className={`relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm z-10 ${
+                    active ? "text-[#0070F2] font-medium" : "text-[#737373] hover:text-[#0a0a0a]"
                   }`}
-                  style={{ transition: "color 160ms ease-out, background-color 160ms ease-out" }}
+                  style={{ transition: "color 160ms ease-out" }}
                 >
+                  {active && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-white shadow-sm -z-10"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  )}
                   {icon}
                   {label}
                 </Link>

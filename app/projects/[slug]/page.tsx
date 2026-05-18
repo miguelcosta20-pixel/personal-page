@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <span className="text-xs text-[#a3a3a3]">{project.year}</span>
         </div>
 
-        <h1 className="text-4xl font-semibold tracking-tight text-[#0a0a0a] mb-4">
+        <h1 className="text-4xl font-semibold tracking-tighter text-[#0a0a0a] mb-4">
           {project.title}
         </h1>
 

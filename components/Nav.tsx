@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   {
@@ -67,16 +67,33 @@ const socialLinks = [
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+      <header
+        className="fixed top-0 left-0 right-0 z-50"
+        style={{
+          background: scrolled ? "rgba(250,250,249,0.90)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(229,229,229,0.6)" : "1px solid transparent",
+          transition: "background 200ms ease-out, border-color 200ms ease-out",
+        }}
+      >
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center gap-4">
 
           {/* Left — name */}
-          <Link href="/" className="text-sm font-semibold text-[#0a0a0a] hover:text-[#0070F2] whitespace-nowrap" style={{ transition: "color 160ms ease-out" }}>
-            Miguel Costa Paulo
-          </Link>
+          <div className="flex-1">
+            <Link href="/" className="text-sm font-semibold text-[#0a0a0a] hover:text-[#0070F2] whitespace-nowrap" style={{ transition: "color 160ms ease-out" }}>
+              Miguel Costa Paulo
+            </Link>
+          </div>
 
           {/* Center — pill nav (desktop) */}
           <nav className="hidden sm:flex items-center gap-1 bg-[#f5f5f5] rounded-full px-2 py-1.5">
@@ -101,7 +118,7 @@ export function Nav() {
           </nav>
 
           {/* Right — hamburger (mobile) */}
-          <div className="flex items-center">
+          <div className="flex-1 flex justify-end">
             <button
               onClick={() => setOpen(true)}
               className="sm:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
@@ -111,6 +128,7 @@ export function Nav() {
               <span className="block w-4 h-px bg-[#0a0a0a] rounded-full" />
             </button>
           </div>
+
         </div>
       </header>
 

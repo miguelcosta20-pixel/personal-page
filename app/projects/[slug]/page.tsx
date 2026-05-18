@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.role}
           </span>
           <span className="px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] text-[#737373] border border-[#e5e5e5]">
-            Under NDA
+            {project.badge ?? "Under NDA"}
           </span>
           <span className="text-xs text-[#a3a3a3]">{project.year}</span>
         </div>

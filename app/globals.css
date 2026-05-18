@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --accent: #0070F2;
+  --accent-soft: #D1EFFF;
+  --accent-muted: #89D1FF;
+}
+
+body {
+  background-color: #fafaf9;
+  color: #0a0a0a;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll-triggered fade-in */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+
+[data-fade][data-visible] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance animation */
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade {
+  animation: heroFade 400ms var(--ease-out) both;
+}
+
+/* Contact link hover + press */
+.contact-link {
+  transition: border-color 160ms ease-out, transform 160ms ease-out, background-color 160ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-link:hover {
+    border-color: var(--accent-muted);
+    background-color: var(--accent-soft);
+  }
+}
+
+.contact-link:active {
+  transform: scale(0.97);
+}
+
+/* Accent timeline dot */
+.timeline-dot {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Skill pill — primary group accent */
+.skill-pill-accent {
+  background-color: #D1EFFF;
+  border-color: #89D1FF;
+  color: #002A86;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-fade] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-fade {
+    animation: none;
+  }
+}
+
+/* Mobile nav stagger */
+@keyframes navItemIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav-item {
+  animation: navItemIn 250ms var(--ease-out) both;
+}
+
+@media print {
+  /* Hide everything that isn't content */
+  .no-print,
+  header {
+    display: none !important;
+  }
+
+  /* Remove the nav offset */
+  body > div {
+    padding-top: 0 !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+  }
+
+  /* Make all faded elements visible */
+  [data-fade] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-fade {
+    animation: none !important;
+  }
+
+  /* Remove colored backgrounds, keep layout */
+  .skill-pill-accent {
+    background: none;
+    border-color: #89D1FF;
+  }
+
+  /* Ensure links print with their text, not URL */
+  a[href]::after {
+    content: none;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1.5cm 2cm;
+    size: A4;
+  }
+
+  /* Avoid breaking experience items across pages */
+  section {
+    break-inside: avoid;
+  }
+}

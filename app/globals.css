@@ -19,6 +19,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:focus-visible {
+  outline: 2px solid #0070F2;
+  outline-offset: 3px;
+}
+
 /* Scroll-triggered fade-in */
 [data-fade] {
   opacity: 0;
@@ -45,6 +50,55 @@ body {
 
 .hero-fade {
   animation: heroFade 400ms var(--ease-out) both;
+}
+
+/* Primary CTA button */
+.cta-primary {
+  transition: background-color 160ms ease-out, transform 160ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-primary:hover {
+    background-color: #005FD9;
+  }
+}
+
+.cta-primary:active {
+  transform: scale(0.97);
+}
+
+/* Back navigation link */
+.back-link {
+  transition: color 160ms ease-out, transform 160ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-link:hover {
+    color: #0a0a0a;
+    transform: translateX(-2px);
+  }
+}
+
+/* Project row directional arrow */
+.project-row-arrow {
+  transition: color 160ms ease-out, transform 160ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .project-row-arrow {
+    transform: translateX(2px);
+  }
+}
+
+/* Social sidebar link */
+.social-link {
+  transition: color 160ms ease-out, transform 160ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .social-link:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* Contact link hover + press */

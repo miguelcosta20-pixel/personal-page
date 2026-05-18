@@ -155,6 +155,7 @@ export interface Project {
   slug: string;
   title: string;
   role: string;
+  badge?: string;
   stack: string[];
   year: string;
   summary: string;
@@ -165,6 +166,71 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "open-item-matching",
+    title: "AI-Driven Open Item Matching",
+    role: "Solution Architect",
+    stack: ["S/4HANA", "Event Mesh", "CAP", "SAP AI Core", "HANA Cloud"],
+    year: "2025",
+    summary:
+      "Designed an event-driven accounts receivable automation platform for a global FMCG enterprise, capturing S/4HANA open items in real time via Event Mesh and applying AI-based matching to eliminate manual reconciliation.",
+    challenge:
+      "A global FMCG enterprise was processing thousands of open items daily through S/4HANA's F.13 clearing run, with reconciliation handled manually by finance teams across multiple regions. The challenge was designing an event-driven architecture that could capture open items in real time as F.13 detected them, feed them into an AI matching engine without polling or batch delays, and present validated recommendations in a user-facing cockpit — all without disrupting the existing S/4HANA landscape or requiring changes to core financial processes.",
+    architecture: [
+      [
+        { label: "S/4HANA",     icon: null, abbr: "S/4",  color: "#7a3a1a", bg: "#fde8d6" },
+        { label: "Event Mesh",  icon: null, abbr: "EM",   color: "#1a4a6b", bg: "#d6eaf8" },
+        { label: "CAP Service", icon: "/icons/cap.svg" },
+        { label: "SAP AI Core", icon: "/icons/ai-core.svg" },
+        { label: "HANA Cloud",  icon: "/icons/hana-cloud.svg" },
+      ],
+    ],
+    contributions: [
+      "Led solution architecture from discovery through design, translating finance team requirements into a BTP-native event-driven architecture",
+      "Designed the Event Mesh integration layer to capture S/4HANA F.13 open items in real time as they are detected",
+      "Architected the CAP application layer for event ingestion, AI orchestration, user validation, and action completion",
+      "Defined the SAP AI Core matching model integration and the confidence-based recommendation framework for finance users",
+      "Delivered architecture blueprints, design documentation, and stakeholder workshops throughout the engagement",
+    ],
+    outcomes: [
+      "Architecture design approved and handed to development team for implementation",
+      "Event-driven pattern eliminates batch processing delays — open items available for AI matching in real time",
+      "AI matching layer designed to handle thousands of items per day without manual intervention",
+      "Solution designed as a reusable pattern applicable to other S/4HANA finance clearing processes",
+    ],
+  },
+  {
+    slug: "langchain-react-agent",
+    title: "Agentic AI Assistant on SAP BTP",
+    role: "Lead Architect & Developer",
+    badge: "Proof of Concept",
+    stack: ["LangChain", "SAP AI Core", "HANA Cloud", "CAP", "SAP BTP"],
+    year: "2025",
+    summary:
+      "Designing and building a LangChain ReAct agent on SAP BTP that autonomously selects tools — HANA vector search and SAP OData APIs — to answer enterprise queries through multi-step reasoning.",
+    challenge:
+      "Enterprise AI systems built on fixed RAG pipelines can only answer questions in one way: retrieve context, generate response. Real business queries are more complex — they require deciding what information to look up, when to call a live system API, and how to combine multiple results before forming an answer. The goal of this PoC is to build a system on SAP BTP where the AI itself reasons about what action to take next, using available tools autonomously without hardcoding the logic for every query type. This demonstrates the agentic pattern the enterprise AI market is converging on.",
+    architecture: [
+      [
+        { label: "CAP Service",     icon: "/icons/cap.svg" },
+        { label: "LangChain Agent", icon: null, abbr: "LC",  color: "#1a6b3c", bg: "#d4f0e0" },
+        { label: "SAP AI Core",     icon: "/icons/ai-core.svg" },
+        { label: "HANA Cloud",      icon: "/icons/hana-cloud.svg" },
+      ],
+    ],
+    contributions: [
+      "Designing the ReAct agent loop using LangChain with SAP AI Core as the underlying LLM provider",
+      "Implementing HANA Cloud vector store as a retrieval tool available to the agent",
+      "Exposing SAP OData endpoints as structured data tools the agent can call autonomously",
+      "Building the CAP service layer as the API surface and audit trail for all agent interactions",
+      "Instrumenting reasoning traces for observability — capturing every tool call and decision step",
+    ],
+    outcomes: [
+      "Validates LangChain + SAP AI Core as a reusable agentic pattern on BTP",
+      "Demonstrates multi-step reasoning with tool selection — beyond standard RAG pipelines",
+      "Establishes a foundation for more complex multi-agent architectures on SAP BTP",
+    ],
+  },
   {
     slug: "banking-automation-platform",
     title: "Banking Process Automation Platform",

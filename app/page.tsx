@@ -16,9 +16,8 @@ export default function Home() {
           SAP BTP &amp; AI Architect
         </h2>
 
-        <p className="text-base text-[#737373] mb-10 max-w-md">
-          I design and build AI &amp; cloud solutions for the enterprise.
-          Based in Lisbon, <span className="text-[#0070F2]">open to new roles</span>.
+        <p className="text-base text-[#737373] mb-10 max-w-xl leading-relaxed">
+          SAP BTP &amp; AI Architect with 8+ years designing and delivering production AI and cloud solutions across the enterprise. Specialising in SAP AI Core, Generative AI Hub, and BTP cloud architecture — bridging pre-sales strategy with hands-on delivery across EMEA and globally. I turn complex SAP landscapes into intelligent, scalable platforms.
         </p>
 
         <div className="flex flex-wrap gap-3 justify-center">

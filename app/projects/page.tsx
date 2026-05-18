@@ -15,8 +15,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-base text-[#737373] max-w-lg leading-relaxed">
-          All client work is under NDA. The summaries below reflect my role and
-          the technical scope, without naming the customer.
+          A mix of client work and personal projects. Customer engagements are under NDA, summaries reflect my role and technical scope without naming the customer.
         </p>
       </section>
 
@@ -38,7 +37,7 @@ export default function ProjectsPage() {
                       {project.role}
                     </span>
                     <span className="px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] text-[#737373] border border-[#e5e5e5]">
-                      Under NDA
+                      {project.badge ?? "Under NDA"}
                     </span>
                   </div>
                 </div>

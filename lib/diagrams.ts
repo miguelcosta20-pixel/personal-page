@@ -3,6 +3,40 @@ import type { FlowNodeDef, FlowEdgeDef } from "./data";
 type DiagramDef = { nodes: FlowNodeDef[]; edges: FlowEdgeDef[] };
 
 export const flowDiagrams: Record<string, DiagramDef> = {
+  "open-item-matching": {
+    nodes: [
+      { id: "s4",      x: 0,   y: 80,  label: "S/4HANA (F.13)", icon: null, abbr: "S/4", color: "#7a3a1a", bg: "#fde8d6" },
+      { id: "mesh",    x: 180, y: 80,  label: "Event Mesh",     icon: null, abbr: "EM",  color: "#1a4a6b", bg: "#d6eaf8" },
+      { id: "cap",     x: 360, y: 80,  label: "CAP Service",    icon: "/icons/cap.svg" },
+      { id: "aicore",  x: 540, y: 80,  label: "SAP AI Core",    icon: "/icons/ai-core.svg" },
+      { id: "hana",    x: 360, y: 200, label: "HANA Cloud",     icon: "/icons/hana-cloud.svg" },
+      { id: "cockpit", x: 540, y: 200, label: "Solution Cockpit", icon: null, abbr: "UI", color: "#002A86", bg: "#D1EFFF" },
+    ],
+    edges: [
+      { id: "e1", source: "s4",     target: "mesh" },
+      { id: "e2", source: "mesh",   target: "cap" },
+      { id: "e3", source: "cap",    target: "aicore", bidirectional: true },
+      { id: "e4", source: "cap",    target: "hana" },
+      { id: "e5", source: "hana",   target: "cockpit" },
+    ],
+  },
+
+  "langchain-react-agent": {
+    nodes: [
+      { id: "cap",    x: 0,   y: 60,  label: "CAP Service",     icon: "/icons/cap.svg" },
+      { id: "agent",  x: 180, y: 60,  label: "LangChain Agent", icon: null, abbr: "LC",  color: "#1a6b3c", bg: "#d4f0e0" },
+      { id: "llm",    x: 360, y: 60,  label: "SAP AI Core",     icon: "/icons/ai-core.svg" },
+      { id: "vector", x: 160, y: 190, label: "HANA Vector",     icon: "/icons/hana-cloud.svg" },
+      { id: "odata",  x: 360, y: 190, label: "OData API",       icon: null, abbr: "API", color: "#737373", bg: "#f5f5f5" },
+    ],
+    edges: [
+      { id: "e1", source: "cap",   target: "agent", bidirectional: true },
+      { id: "e2", source: "agent", target: "llm",   bidirectional: true },
+      { id: "e3", source: "agent", target: "vector" },
+      { id: "e4", source: "agent", target: "odata" },
+    ],
+  },
+
   "banking-automation-platform": {
     nodes: [
       { id: "bank", x: 0,   y: 80,  label: "Bank Systems",     icon: null,                         abbr: "Bank", color: "#1a5f1a", bg: "#d6f5d6" },

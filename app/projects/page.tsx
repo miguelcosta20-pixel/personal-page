@@ -48,7 +48,7 @@ export default function ProjectsPage() {
 
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs text-[#a3a3a3] mr-1">{project.year}</span>
+                    <span className="text-xs text-[#737373] mr-1">{project.year}</span>
                     {project.stack.map((tech, j) => (
                       <span
                         key={j}

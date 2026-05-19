@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Contact — Miguel Costa Paulo",
-  description: "Get in touch with Miguel Costa Paulo, SAP BTP & AI Architect based in Lisbon.",
+  description: "Get in touch with Miguel Costa Paulo, SAP BTP & AI Architect.",
 };
 
 export default function ContactPage() {

@@ -45,7 +45,7 @@ export function Experience() {
                 {exp.role}
               </p>
               <p className="text-sm text-[#737373] mt-0.5 mb-3">
-                {exp.company} · {exp.location} · {exp.period}
+                {exp.company} · {exp.period}
               </p>
               <ul className="space-y-1.5">
                 {exp.bullets.map((b, j) => (

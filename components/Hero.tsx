@@ -13,7 +13,7 @@ export function Hero() {
             Available for SAP AI &amp; BTP roles
           </span>
 
-          <h1 className="text-5xl font-semibold tracking-tight text-[#0a0a0a] mb-3 leading-[1.1]">
+          <h1 className="text-5xl font-semibold tracking-tighter text-[#0a0a0a] mb-3 leading-[1.1]">
             Miguel Costa Paulo
           </h1>
           <p className="text-xl text-[#737373] mb-8">
@@ -28,7 +28,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-3">
             <a
               href="mailto:miguelcosta20@gmail.com"
-              className="contact-link inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#e5e5e5] text-sm text-[#0a0a0a] bg-white"
+              className="contact-link inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full border border-[#e5e5e5] text-sm text-[#0a0a0a] bg-white"
             >
               miguelcosta20@gmail.com
             </a>
@@ -36,10 +36,10 @@ export function Hero() {
               href="https://linkedin.com/in/miguelcosta20"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-link inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#e5e5e5] text-sm text-[#0a0a0a] bg-white"
+              className="contact-link inline-flex items-center gap-2 px-4 py-2 min-h-[44px] rounded-full border border-[#e5e5e5] text-sm text-[#0a0a0a] bg-white"
             >
               LinkedIn
-              <span className="w-6 h-6 rounded-full bg-[#f5f5f5] flex items-center justify-center text-xs">↗</span>
+              <span aria-hidden="true" className="w-6 h-6 rounded-full bg-[#f5f5f5] flex items-center justify-center text-xs">↗</span>
             </a>
           </div>
         </div>

@@ -38,8 +38,7 @@ export function SocialSidebar() {
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
           aria-label={label}
-          className="text-[#a3a3a3] hover:text-[#0070F2] hover:-translate-y-0.5"
-          style={{ transition: "color 160ms ease-out, transform 160ms ease-out" }}
+          className="social-link text-[#a3a3a3] hover:text-[#0070F2]"
         >
           {icon}
         </a>

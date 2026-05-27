@@ -49,15 +49,15 @@ export default function AboutPage() {
     <main className="max-w-3xl mx-auto px-6 pb-16">
 
       {/* What I do */}
-      <section className="min-h-[50dvh] flex flex-col justify-center items-center text-center pt-16 pb-12 hero-fade">
-        <h1 className="text-4xl font-semibold tracking-tight text-[#0a0a0a] mb-6">
-          What I do
+      <section className="min-h-[50dvh] flex flex-col justify-center pt-16 pb-12 hero-fade">
+        <h1 className="text-4xl font-semibold tracking-tighter text-[#0a0a0a] mb-6">
+          What I Do
         </h1>
         <p className="text-base text-[#737373] leading-relaxed max-w-lg">
           SAP BTP &amp; AI Architect with 8+ years designing and delivering
           production AI and cloud solutions across the enterprise. I specialise
           in SAP AI Core, Generative AI Hub, and BTP cloud architecture,
-          bridging pre-sales strategy with hands-on delivery across EMEA
+          bridging solution advisory with hands-on delivery across EMEA
           and beyond. Focused on turning complex SAP landscapes into intelligent,
           scalable platforms.
         </p>
@@ -65,8 +65,8 @@ export default function AboutPage() {
 
       {/* Tech I Work With */}
       <FadeIn>
-        <section className="pb-16">
-          <h2 className="text-2xl font-semibold tracking-tight text-[#0a0a0a] mb-10 text-center">
+        <section className="border-t border-[#e5e5e5] pb-16 pt-12">
+          <h2 className="text-2xl font-semibold tracking-tight text-[#0a0a0a] mb-10">
             Tech I Work With
           </h2>
           <div className="flex flex-col gap-8">

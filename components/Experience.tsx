@@ -18,7 +18,7 @@ export function Experience() {
             observer.disconnect();
           }
         },
-        { rootMargin: "-40px" }
+        { threshold: 0.1 }
       );
       observer.observe(el);
       observers.push(observer);
@@ -38,19 +38,19 @@ export function Experience() {
               key={i}
               ref={(el) => { itemRefs.current[i] = el; }}
               data-fade
-              className="relative pl-5 border-l border-[#e5e5e5]"
+              className="relative pl-5 border-l border-[#d4eeff]"
             >
               <span className="absolute -left-[5px] top-[6px] w-2.5 h-2.5 rounded-full border-2 border-[#0070F2] bg-[#D1EFFF]" />
               <p className="text-base font-medium text-[#0a0a0a] leading-snug">
                 {exp.role}
               </p>
               <p className="text-sm text-[#737373] mt-0.5 mb-3">
-                {exp.company} · {exp.location} · {exp.period}
+                {exp.company} · {exp.period}
               </p>
               <ul className="space-y-1.5">
                 {exp.bullets.map((b, j) => (
                   <li key={j} className="text-sm text-[#404040] leading-relaxed flex gap-2">
-                    <span className="text-[#a3a3a3] shrink-0 mt-0.5">–</span>
+                    <span aria-hidden="true" className="text-[#737373] shrink-0 mt-0.5">–</span>
                     {b}
                   </li>
                 ))}

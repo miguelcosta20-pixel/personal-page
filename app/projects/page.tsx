@@ -11,12 +11,11 @@ export default function ProjectsPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 pb-16">
       <section className="pt-16 pb-12 hero-fade">
-        <h1 className="text-4xl font-semibold tracking-tight text-[#0a0a0a] mb-3">
+        <h1 className="text-4xl font-semibold tracking-tighter text-[#0a0a0a] mb-3">
           Projects
         </h1>
         <p className="text-base text-[#737373] max-w-lg leading-relaxed">
-          All client work is under NDA. The summaries below reflect my role and
-          the technical scope, without naming the customer.
+          A mix of client work and personal projects. Customer engagements are under NDA, summaries reflect my role and technical scope without naming the customer.
         </p>
       </section>
 
@@ -25,10 +24,10 @@ export default function ProjectsPage() {
           <FadeIn key={i} delay={i * 0.06}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group block ring-1 ring-black/[0.06] p-1.5 rounded-[1.5rem] bg-black/[0.02] hover:bg-black/[0.04]"
-              style={{ transition: "background-color 160ms ease-out" }}
+              className="group block border border-[#e5e5e5] rounded-2xl bg-white hover:border-[#d4d4d4] hover:shadow-sm"
+              style={{ transition: "border-color 160ms ease-out, box-shadow 160ms ease-out" }}
             >
-              <div className="rounded-[calc(1.5rem-0.375rem)] bg-white border border-[#f0f0f0] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]">
+              <div className="p-6">
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <h2 className="text-lg font-semibold text-[#0a0a0a]">
                     {project.title}
@@ -38,7 +37,7 @@ export default function ProjectsPage() {
                       {project.role}
                     </span>
                     <span className="px-2.5 py-1 text-xs rounded-full bg-[#f5f5f5] text-[#737373] border border-[#e5e5e5]">
-                      Under NDA
+                      {project.badge ?? "Under NDA"}
                     </span>
                   </div>
                 </div>
@@ -49,7 +48,7 @@ export default function ProjectsPage() {
 
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs text-[#a3a3a3] mr-1">{project.year}</span>
+                    <span className="text-xs text-[#737373] mr-1">{project.year}</span>
                     {project.stack.map((tech, j) => (
                       <span
                         key={j}

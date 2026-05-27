@@ -11,11 +11,10 @@ export function About() {
           <p className="text-base text-[#404040] leading-relaxed">
             8+ years of customer-facing experience in the SAP ecosystem,
             specialising in AI and cloud architecture on SAP BTP. I work across
-            the full solution lifecycle, from pre-sales and RFx to hands-on
+            the full solution lifecycle, from solution advisory and RFx to hands-on
             implementation, helping enterprise customers turn SAP AI capabilities
-            into real business outcomes. Currently based in Lisbon, focused on
-            SAP AI Core, Generative AI Hub, and the future of intelligent
-            enterprise software.
+            into real business outcomes. Focused on SAP AI Core, Generative AI Hub,
+            and the future of intelligent enterprise software.
           </p>
         </div>
       </FadeIn>

@@ -119,7 +119,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <h2 className="text-sm font-semibold text-[#0a0a0a] mb-6">
               Architecture
             </h2>
-            <ArchDiagram nodes={flowDiagram.nodes} edges={flowDiagram.edges} />
+            <ArchDiagram nodes={flowDiagram.nodes} edges={flowDiagram.edges} groups={flowDiagram.groups} />
           </section>
         </FadeIn>
       )}

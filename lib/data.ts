@@ -144,11 +144,21 @@ export interface FlowEdgeDef {
   source: string;
   target: string;
   bidirectional?: boolean;
+  edgeType?: "https" | "dashed" | "trust";
+}
+
+export interface FlowGroupDef {
+  id: string;
+  label: string;
+  nodeIds: string[];
+  color: string;
+  style: "solid" | "dashed";
 }
 
 export interface FlowDiagram {
   nodes: FlowNodeDef[];
   edges: FlowEdgeDef[];
+  groups?: FlowGroupDef[];
 }
 
 export interface Project {

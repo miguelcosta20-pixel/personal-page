@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+}
+
+/* ─── Brand palette — António Costa Paulo, Solicitador ─── */
+:root {
+  /* Core */
+  --color-bg:         #FAFAF8;   /* warm white — card background */
+  --color-ink:        #111111;   /* near-black — name weight */
+  --color-slate:      #5A5A5A;   /* body copy, contact details */
+  --color-hairline:   #E0DEDD;   /* dividers */
+
+  /* Accent — crimson from the red banner */
+  --color-accent:     #A8182A;
+  --color-accent-dark:#7D1020;   /* hover / pressed state */
+  --color-accent-soft:#F4E0E3;   /* tint backgrounds */
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Utility classes ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+  transition: background-color 160ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: var(--color-accent-dark);
+  }
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  transition: transform 160ms var(--ease-out);
+}
+
+.accent-banner {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.section-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.hairline {
+  border-color: var(--color-hairline);
+}

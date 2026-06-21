@@ -1,25 +1,13 @@
 {
-  "name": "mcpaulo",
-  "version": "0.1.0",
+  "name": "costapaulo",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@xyflow/react": "^12.10.2",
-    "framer-motion": "^12.39.0",
-    "next": "16.2.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "dev:miguel": "npm run dev --workspace=apps/miguel",
+    "dev:antonio": "npm run dev --workspace=apps/antonio",
+    "build:miguel": "npm run build --workspace=apps/miguel",
+    "build:antonio": "npm run build --workspace=apps/antonio"
   }
 }

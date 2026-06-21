@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   title: "Miguel Costa Paulo — SAP BTP & AI Architect",
   description:
     "AI-first SAP Architect with 8+ years designing and delivering scalable AI and cloud solutions across the SAP ecosystem. Deep expertise in SAP AI Core, Generative AI Hub, and SAP BTP.",
-  metadataBase: new URL("https://mcpaulo.dev"),
+  metadataBase: new URL("https://miguel.costapaulo.com"),
   openGraph: {
     title: "Miguel Costa Paulo — SAP BTP & AI Architect",
     description:
       "AI-first SAP Architect specialising in SAP AI Core, Generative AI Hub, and BTP cloud architecture.",
     type: "website",
-    url: "https://mcpaulo.dev",
+    url: "https://miguel.costapaulo.com",
   },
 };
 
